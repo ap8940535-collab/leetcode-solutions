@@ -1,37 +1,32 @@
 /**
  * Problem: 9. Palindrome Number
  * Difficulty: Easy
- * Category: Math & Logic
+ * Category: Math
+ * Runtime: 0 ms | Memory: 8.6 MB
  *
- * Time Complexity:  O(log10(N))
- * Space Complexity: O(1)
+ * LeetCode: https://leetcode.com/problems/palindrome-number/
  */
 
+#include <vector>
+#include <string>
+#include <algorithm>
 #include <iostream>
+
+using namespace std;
 
 class Solution {
 public:
     bool isPalindrome(int x) {
-        // Negative numbers or numbers ending with 0 (except 0 itself) are not palindromes
-        if (x < 0 || (x % 10 == 0 && x != 0)) {
-            return false;
+        //Negative numbera are not palindromes
+        if(x<0) return false;
+        int original = x;
+        long long reverse = 0;
+        while (x>0){
+            int digit = x%10; //get last digit
+            reverse = reverse * 10 + digit; //Add digit to reverse
+            x = x/10; //Remove last digit
         }
-
-        int revertedNumber = 0;
-        while (x > revertedNumber) {
-            revertedNumber = revertedNumber * 10 + (x % 10);
-            x /= 10;
-        }
-
-        // When length is odd, middle digit doesn't matter (revertedNumber / 10)
-        return x == revertedNumber || x == revertedNumber / 10;
+        return original == reverse;
+        
     }
 };
-
-int main() {
-    Solution sol;
-    std::cout << "121 is palindrome: " << (sol.isPalindrome(121) ? "true" : "false") << "\n";
-    std::cout << "-121 is palindrome: " << (sol.isPalindrome(-121) ? "true" : "false") << "\n";
-    std::cout << "10 is palindrome: " << (sol.isPalindrome(10) ? "true" : "false") << "\n";
-    return 0;
-}

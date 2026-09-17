@@ -1,54 +1,91 @@
 # 1. Two Sum
 
 **Difficulty:** Easy  
-**Category:** Arrays & Hashing  
-**Time Complexity:** O(N)  
-**Space Complexity:** O(N)  
+**Category:** Array, Hash Table  
+**Runtime:** `2 ms` | **Memory:** `14.8 MB`  
 **LeetCode Link:** [Two Sum](https://leetcode.com/problems/two-sum/)  
 
 ---
 
 ## 📌 Problem Description
 
-Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+You are given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
 
-You may assume that each input would have **exactly one solution**, and you may not use the same element twice.
 
-### Examples
 
-**Example 1:**
+You may assume that each input would have ***exactly* one solution**, and you may not use the *same* element twice.
+
+
+
+You can return the answer in any order.
+
+
+
+ 
+
+
+Example 1:
+
+
+
 ```text
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+**Input:** nums = [2,7,11,15], target = 9
+**Output:** [0,1]
+**Explanation:** Because nums[0] + nums[1] == 9, we return [0, 1].
+
 ```
 
-**Example 2:**
+Example 2:
+
+
+
 ```text
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
+
+**Input:** nums = [3,2,4], target = 6
+**Output:** [1,2]
+
 ```
 
----
+Example 3:
 
-## 💡 Intuition & Approach
 
-### Hash Map (One-Pass)
-1. Iterate through the array while maintaining a hash map of `{value: index}`.
-2. For each element `nums[i]`, compute its complement: `complement = target - nums[i]`.
-3. If `complement` is already in the map, return the pair `[map[complement], i]`.
-4. Otherwise, record `nums[i]` and its index into the map.
+
+```text
+
+**Input:** nums = [3,3], target = 6
+**Output:** [0,1]
+
+```
+
+ 
+
+
+**Constraints:**
+
+
+
+
+	- `2 <= nums.length <= 10^4`
+	- `-10^9 <= nums[i] <= 10^9`
+	- `-10^9 <= target <= 10^9`
+	- **Only one valid answer exists.**
+
+
+ 
+
+
+**Follow-up: **Can you come up with an algorithm that is less than `O(n^2)` time complexity?
 
 ---
 
 ## ⚡ Complexity Analysis
 
-- **Time Complexity:** `O(N)` — Single pass over the array of length $N$, with $O(1)$ average hash map lookups.
-- **Space Complexity:** `O(N)` — Hash map stores at most $N$ elements.
+- **Time Complexity:** `O(N)`
+- **Space Complexity:** `O(1)`
 
 ---
 
 ## 📂 Implementations
 
-- [C++ Solution](solution.cpp)
-- [C Solution](solution.c)
+- [CPP Solution](solution.cpp)

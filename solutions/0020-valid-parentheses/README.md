@@ -1,43 +1,121 @@
 # 20. Valid Parentheses
 
 **Difficulty:** Easy  
-**Category:** Stack  
-**Time Complexity:** O(N)  
-**Space Complexity:** O(N)  
+**Category:** String, Stack  
+**Runtime:** `0 ms` | **Memory:** `8.8 MB`  
 **LeetCode Link:** [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)  
 
 ---
 
 ## 📌 Problem Description
 
-Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
+Given a string `s` containing just the characters `&#39;(&#39;`, `&#39;)&#39;`, `&#39;{&#39;`, `&#39;}&#39;`, `&#39;[&#39;` and `&#39;]&#39;`, determine if the input string is valid.
+
+
 
 An input string is valid if:
-1. Open brackets must be closed by the same type of brackets.
-2. Open brackets must be closed in the correct order.
-3. Every close bracket has a corresponding open bracket of the same type.
 
----
 
-## 💡 Intuition & Approach
 
-### Stack Simulation
-1. Use a `std::stack<char>` to track pending opening brackets.
-2. When encountering an opening bracket (`(`, `{`, `[`), push its expected closing bracket onto the stack.
-3. When encountering a closing bracket:
-   - If the stack is empty or the top of the stack does not match, return `false`.
-   - Otherwise, pop the matching bracket.
-4. After examining the entire string, the stack must be empty for the string to be valid.
+
+	- Open brackets must be closed by the same type of brackets.
+	- Open brackets must be closed in the correct order.
+	- Every close bracket has a corresponding open bracket of the same type.
+
+
+ 
+
+
+Example 1:
+
+
+
+
+**Input:** s = "()"
+
+
+
+**Output:** true
+
+
+
+
+Example 2:
+
+
+
+
+**Input:** s = "()[]{}"
+
+
+
+**Output:** true
+
+
+
+
+Example 3:
+
+
+
+
+**Input:** s = "(]"
+
+
+
+**Output:** false
+
+
+
+
+Example 4:
+
+
+
+
+**Input:** s = "([])"
+
+
+
+**Output:** true
+
+
+
+
+Example 5:
+
+
+
+
+**Input:** s = "([)]"
+
+
+
+**Output:** false
+
+
+
+
+ 
+
+
+**Constraints:**
+
+
+
+
+	- `1 <= s.length <= 10^4`
+	- `s` consists of parentheses only `&#39;()[]{}&#39;`.
 
 ---
 
 ## ⚡ Complexity Analysis
 
-- **Time Complexity:** `O(N)` — Single traversal of string length $N$.
-- **Space Complexity:** `O(N)` — Stack stores at most $N$ characters in the worst case.
+- **Time Complexity:** `O(N)`
+- **Space Complexity:** `O(1)`
 
 ---
 
 ## 📂 Implementations
 
-- [C++ Solution](solution.cpp)
+- [CPP Solution](solution.cpp)

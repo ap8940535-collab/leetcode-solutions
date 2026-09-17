@@ -1,42 +1,32 @@
 /**
  * Problem: 1. Two Sum
  * Difficulty: Easy
- * Category: Arrays & Hashing
+ * Category: Array, Hash Table
+ * Runtime: 2 ms | Memory: 14.8 MB
  *
- * Time Complexity:  O(N)
- * Space Complexity: O(N)
+ * LeetCode: https://leetcode.com/problems/two-sum/
  */
 
-#include <iostream>
 #include <vector>
-#include <unordered_map>
+#include <string>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
 
 class Solution {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::unordered_map<int, int> seen;
-        
-        for (int i = 0; i < static_cast<int>(nums.size()); ++i) {
-            int complement = target - nums[i];
-            auto it = seen.find(complement);
-            if (it != seen.end()) {
-                return {it->second, i};
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int , int> mp;
+        for (int i = 0; i < nums . size(); i++) {
+            int needed = target - nums [i];
+            if (mp.find(needed) != mp.end()){
+                return
+                {mp[needed], i};
             }
-            seen[nums[i]] = i;
+            mp[nums[i]] = i;
         }
-        
         return {};
+        
     }
 };
-
-int main() {
-    Solution solver;
-    std::vector<int> nums = {2, 7, 11, 15};
-    int target = 9;
-    
-    std::vector<int> result = solver.twoSum(nums, target);
-    if (!result.empty()) {
-        std::cout << "Indices: [" << result[0] << ", " << result[1] << "]\n";
-    }
-    return 0;
-}

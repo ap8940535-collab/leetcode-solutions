@@ -1,41 +1,35 @@
 /**
  * Problem: 3. Longest Substring Without Repeating Characters
  * Difficulty: Medium
- * Category: Sliding Window
+ * Category: Hash Table, String
+ * Runtime: 8 ms | Memory: 19.2 MB
  *
- * Time Complexity:  O(N)
- * Space Complexity: O(min(N, M))
+ * LeetCode: https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 
-#include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <algorithm>
+#include <iostream>
+
+using namespace std;
 
 class Solution {
 public:
-    int lengthOfLongestSubstring(std::string s) {
-        std::vector<int> last_seen(128, -1);
-        int max_len = 0;
+    int lengthOfLongestSubstring(string s) {
+        vector<int> last(256,-1);
         int left = 0;
-
-        for (int right = 0; right < static_cast<int>(s.length()); ++right) {
-            unsigned char c = static_cast<unsigned char>(s[right]);
-            if (last_seen[c] >= left) {
-                left = last_seen[c] + 1;
+        int ans = 0;
+        for (int right = 0;right < s.length();right++) {
+            //if character was already seen.
+            if(last[s[right]] >= left){
+                left = last[s[right]] + 1;
             }
-            last_seen[c] = right;
-            max_len = std::max(max_len, right - left + 1);
+           // store the latest position.
+           last[s[right]]=right; // current window length.
+           ans = max(ans, right - left + 1);
         }
-
-        return max_len;
+        return ans;
+        
     }
 };
-
-int main() {
-    Solution sol;
-    std::cout << "\"abcabcbb\": " << sol.lengthOfLongestSubstring("abcabcbb") << " (Expected: 3)\n";
-    std::cout << "\"bbbbb\": " << sol.lengthOfLongestSubstring("bbbbb") << " (Expected: 1)\n";
-    std::cout << "\"pwwkew\": " << sol.lengthOfLongestSubstring("pwwkew") << " (Expected: 3)\n";
-    return 0;
-}

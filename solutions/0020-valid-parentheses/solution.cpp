@@ -1,44 +1,46 @@
 /**
  * Problem: 20. Valid Parentheses
  * Difficulty: Easy
- * Category: Stack
+ * Category: String, Stack
+ * Runtime: 0 ms | Memory: 8.8 MB
  *
- * Time Complexity:  O(N)
- * Space Complexity: O(N)
+ * LeetCode: https://leetcode.com/problems/valid-parentheses/
  */
 
-#include <iostream>
+#include <vector>
 #include <string>
-#include <stack>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
 
 class Solution {
 public:
-    bool isValid(std::string s) {
-        std::stack<char> st;
-
-        for (char c : s) {
-            if (c == '(') {
-                st.push(')');
-            } else if (c == '{') {
-                st.push('}');
-            } else if (c == '[') {
-                st.push(']');
-            } else {
-                if (st.empty() || st.top() != c) {
+    bool isValid(string s) {
+        stack<char> st;
+        for (char ch : s){
+            // opening brackets 
+            if(ch =='(' || ch =='{' || ch == '[') {
+                st.push(ch);
+            
+            }
+            else{
+                if(st.empty()) {
+                    return false;
+                }
+                if (ch ==')' && st.top() != '(') {
+                    return false;
+                }
+                if (ch == '}' && st.top() != '{') {
+                    return false;
+                }
+                if (ch == ']' && st.top() != '[') {
                     return false;
                 }
                 st.pop();
             }
         }
-
         return st.empty();
+        
     }
 };
-
-int main() {
-    Solution sol;
-    std::cout << "\"()[]{}\": " << (sol.isValid("()[]{}") ? "true" : "false") << "\n";
-    std::cout << "\"(]\": " << (sol.isValid("(]") ? "true" : "false") << "\n";
-    std::cout << "\"([{}])\": " << (sol.isValid("([{}])") ? "true" : "false") << "\n";
-    return 0;
-}

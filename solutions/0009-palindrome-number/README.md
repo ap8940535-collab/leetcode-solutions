@@ -1,57 +1,82 @@
 # 9. Palindrome Number
 
 **Difficulty:** Easy  
-**Category:** Math & Logic  
-**Time Complexity:** O(log10(N))  
-**Space Complexity:** O(1)  
+**Category:** Math  
+**Runtime:** `0 ms` | **Memory:** `8.6 MB`  
 **LeetCode Link:** [Palindrome Number](https://leetcode.com/problems/palindrome-number/)  
 
 ---
 
 ## 📌 Problem Description
 
-Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise.
+Given an integer `x`, return `true` if `x` is a **palindrome**, and `false` otherwise.
 
-An integer is a palindrome when it reads the same forward and backward (e.g., `121` is a palindrome while `123` is not).
 
-### Examples
 
-**Example 1:**
+ 
+
+
+Example 1:
+
+
+
 ```text
-Input: x = 121
-Output: true
-Explanation: 121 reads as 121 from left to right and from right to left.
+
+**Input:** x = 121
+**Output:** true
+**Explanation:** 121 reads as 121 from left to right and from right to left.
+
 ```
 
-**Example 2:**
+Example 2:
+
+
+
 ```text
-Input: x = -121
-Output: false
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+**Input:** x = -121
+**Output:** false
+**Explanation:** From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
 ```
 
----
+Example 3:
 
-## 💡 Intuition & Approach
 
-### Reversing Half the Number
-1. Special cases:
-   - Negative numbers cannot be palindromes (e.g., `-121`).
-   - If the last digit is `0`, the first digit must also be `0` (only `0` satisfies this).
-2. Reverse only the second half of the number by taking `% 10` and multiplying previous reversed sum by `10`.
-3. Stop when the reversed half is greater than or equal to the remaining first half (`revertedNumber >= x`).
-4. Check if `x == revertedNumber` (even length) or `x == revertedNumber / 10` (odd length).
+
+```text
+
+**Input:** x = 10
+**Output:** false
+**Explanation:** Reads 01 from right to left. Therefore it is not a palindrome.
+
+```
+
+ 
+
+
+**Constraints:**
+
+
+
+
+	- `-2^31 <= x <= 2^31 - 1`
+
+
+ 
+
+
+**Follow up:** Could you solve it without converting the integer to a string?
 
 ---
 
 ## ⚡ Complexity Analysis
 
-- **Time Complexity:** `O(log10(N))` — Dividing by 10 at each step, taking roughly half the number of digits.
-- **Space Complexity:** `O(1)` — Constant extra space.
+- **Time Complexity:** `O(N)`
+- **Space Complexity:** `O(1)`
 
 ---
 
 ## 📂 Implementations
 
-- [C++ Solution](solution.cpp)
-- [C Solution](solution.c)
+- [CPP Solution](solution.cpp)
