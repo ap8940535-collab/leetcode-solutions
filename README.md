@@ -5,7 +5,7 @@
 [![CI Build](https://github.com/ap8940535-collab/leetcode-solutions/actions/workflows/ci.yml/badge.svg)](https://github.com/ap8940535-collab/leetcode-solutions/actions)
 [![Language](https://img.shields.io/badge/Language-C++%20%7C%20C-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)](https://github.com/ap8940535-collab/leetcode-solutions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![Profile](https://img.shields.io/badge/LeetCode-Profile-FFA116?style=flat-square&logo=leetcode&logoColor=white)](https://leetcode.com/)
+[![Profile](https://img.shields.io/badge/LeetCode-Ashishpathak0007-FFA116?style=flat-square&logo=leetcode&logoColor=white)](https://leetcode.com/u/Ashishpathak0007/)
 
 <p align="center">
   A curated, professionally organized repository containing robust, well-documented solutions to LeetCode algorithmic problems in <b>C++</b> and <b>C</b> with detailed complexity analyses and intuitive explanations.
