@@ -20,7 +20,7 @@
 <!-- STATS:START -->
 | 🎯 Total Solved | 🟢 Easy | 🟡 Medium | 🔴 Hard |
 | :---: | :---: | :---: | :---: |
-| **5** | **4** (80.0%) | **1** (20.0%) | **0** (0.0%) |
+| **6** | **4** (66.7%) | **1** (16.7%) | **1** (16.7%) |
 <!-- STATS:END -->
 
 ---
@@ -32,6 +32,7 @@
 | :-: | :-- | :-: | :-- | :-: | :-: | :-: |
 | `0001` | **[Two Sum](https://leetcode.com/problems/two-sum/)** | ![Easy](https://img.shields.io/badge/Easy-22c55e?style=flat-square) | `Arrays & Hashing` | [C](solutions/0001-two-sum/solution.c), [C++](solutions/0001-two-sum/solution.cpp) | `O(N)` | `O(N)` |
 | `0003` | **[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)** | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `Sliding Window` | [C++](solutions/0003-longest-substring-without-repeating-characters/solution.cpp) | `O(N)` | `O(min(N, M))` |
+| `0004` | **[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)** | ![Hard](https://img.shields.io/badge/Hard-ef4444?style=flat-square) | `Two Pointers / Arrays` | [C++](solutions/0004-median-of-two-sorted-arrays/solution.cpp) | `O(m + n)` | `O(m + n)` |
 | `0009` | **[Palindrome Number](https://leetcode.com/problems/palindrome-number/)** | ![Easy](https://img.shields.io/badge/Easy-22c55e?style=flat-square) | `Math & Logic` | [C](solutions/0009-palindrome-number/solution.c), [C++](solutions/0009-palindrome-number/solution.cpp) | `O(log10(N))` | `O(1)` |
 | `0020` | **[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)** | ![Easy](https://img.shields.io/badge/Easy-22c55e?style=flat-square) | `Stack` | [C++](solutions/0020-valid-parentheses/solution.cpp) | `O(N)` | `O(N)` |
 | `0125` | **[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)** | ![Easy](https://img.shields.io/badge/Easy-22c55e?style=flat-square) | `Two Pointers` | [C](solutions/0125-valid-palindrome/solution.c), [C++](solutions/0125-valid-palindrome/solution.cpp) | `O(N)` | `O(1)` |
